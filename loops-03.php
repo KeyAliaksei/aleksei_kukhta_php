@@ -31,30 +31,6 @@
         .row-3 {
             background-color: red;
         }
-        .color-1 {
-            color: crimson;
-            background-color: rgb(0, 0, 0);
-        }
-        .color-2 {
-            color: crimson;
-            background-color: rgb(50, 50, 50);
-        }
-        .color-3 {
-            color: crimson;
-            background-color: rgb(100, 100, 100);
-        }
-        .color-4 {
-            color: crimson;
-            background-color: rgb(150, 150, 150);
-        }
-        .color-5 {
-            color: crimson;
-            background-color: rgb(200, 200, 200);
-        }
-        .color-6 {
-            color: crimson;
-            background-color: rgb(250, 250, 250);
-        }
     </style>
 </head>
 
@@ -124,15 +100,18 @@
 <!--
 Обеспечьте плавное изменение цвета шрифта k строк от черного к белому (первая строка – черный цвет, последняя строка – белый,
 промежуточные – градации серого). Можно просто добавить к коду первого задания.
-Вопрос: как реализовать с помощью деления значения rgb на значение $rows_total ?
 -->
 <?php
-$rows_total=6;
+$rows_total=200;
+$r=0;
+$r_max=250;
+$step=$r_max/$rows_total;
 ?>
-<?php for ($x=1; $x<=$rows_total; $x++) { ?>
-    <span class="color-<?= $x ?>">
-        row<?= $x ?>
-    </span><br>
+<?php for ($x=0; $x<=$rows_total; $x++) { ?>
+        <span style="color: rgb(<?= round($r) ?>, <?= round($r) ?>, <?= round($r) ?>)">
+            row<?= $x ?>
+        </span><br>
+        <?php $r = $x < $rows_total ? $r+=$step : $r_max ?>
 <?php } ?>
 </body>
 </html>
