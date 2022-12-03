@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>arrays</title>
+    <title>arrays-04</title>
 </head>
 <body>
 <h1>Task_1</h1>
@@ -52,8 +52,9 @@ $array = [0, 1, 2, 3, 4, 5, 6, 7];
 echo '<pre>';
 print_r($array);
 echo '</pre>';
-
-$count = count($array);
+/*
+ * как выполнить задачу циклами?
+ $count = count($array);
 for ($i = 0; $i < $count - 4; $i++){
     if ($i % 2 == 0){
         $evenValue = $array[$i];
@@ -65,6 +66,19 @@ for ($i = 0; $i < $count - 4; $i++){
 echo '<pre>';
 print_r($array);
 echo '</pre>';
+ */
+foreach ($array as $key => $value){
+    if ($value % 2 != 0){
+        $oddArray[] = $value;
+    } else {
+        $evenArray[] = $value;
+    }
+}
+$newArray = array_merge($oddArray, $evenArray);
+echo '<pre>';
+print_r($newArray);
+echo '</pre>';
+
 ?>
 <h1>Task_3</h1>
 <!--3. В двумерном массиве определить номера столбцов, не содержащих ни одного нулевого элемента, и вычислить произведения

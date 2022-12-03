@@ -65,7 +65,6 @@ Symfony Philosophy. Embracing and promoting professionalism, best practices, sta
 
 $str = explode(' ', preg_replace('/[[:punct:]\s]+/u', ' ', $text));
 $maxWord = $str[0];
-$total = [];
 for ($i = 0; $i < count($str); $i++){
     if (strlen($str[$i]) > strlen($maxWord)){
         $maxWord = $str[$i];
