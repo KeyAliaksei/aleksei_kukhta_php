@@ -26,9 +26,9 @@ print $keyMax;
 echo '</pre>';
 
 if ($keyMin < $keyMax){
-    $array = array_slice($array, $keyMin, $keyMax);
+    $array = array_slice($array, $keyMin, ($keyMax - $keyMin) + 1);
 }elseif ($keyMin > $keyMax){
-    $array = array_slice($array, $keyMax, $keyMin);
+    $array = array_slice($array, $keyMax, ($keyMin - $keyMax) + 1);
 }else{
     echo 'no numbers to calculate';
 }
@@ -84,16 +84,17 @@ echo '</pre>';
 <!--3. В двумерном массиве определить номера столбцов, не содержащих ни одного нулевого элемента, и вычислить произведения
 элементов каждого из этих столбцов.-->
 <?php
-$array = [[1, 5, 0, 3], [5, 1, 2, 0]];
-$prodValue = 1;
+$array = [[3, 5, 0, 3], [5, 4, 2, 0]];
+$prod = [];
 for ($i = 0; $i < 4; $i++) {
-    for ($j = 0; $j < 2; $j++) {
-        if ($array[$i][$j] != 0) {
-            $prodValue *= $array[$i][$j];
+    echo "column: $i <br>";
+    for ($j = 0; $j < 2; $j++){
+        if ($array[$j][$i] != 0){
+            $prod = array_column($array, $i);
         }
     }
+    echo array_product($prod). '<br>';
 }
-echo 'product(array) =' .$prodValue;
 ?>
 </body>
 </html>
