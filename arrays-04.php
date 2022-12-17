@@ -85,15 +85,13 @@ echo '</pre>';
 элементов каждого из этих столбцов.-->
 <?php
 $array = [[3, 5, 0, 3], [5, 4, 2, 0]];
-$prod = [];
 for ($i = 0; $i < 4; $i++) {
-    echo "column: $i <br>";
-    for ($j = 0; $j < 2; $j++){
-        if ($array[$j][$i] != 0){
-            $prod = array_column($array, $i);
-        }
+    $prod = array_column($array, $i);
+    if (!in_array(0, $prod)){
+        echo array_product($prod). '<br>';
+    } else {
+        echo 'The null value exists in the array!'.'<br>';
     }
-    echo array_product($prod). '<br>';
 }
 ?>
 </body>

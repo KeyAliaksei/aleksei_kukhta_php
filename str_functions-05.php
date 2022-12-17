@@ -37,7 +37,7 @@ $text =
      ';
 echo nl2br($text);
 // количество абзацев
-$countParagraph = substr_count($text, "\r\n"); // "\r\n" - обязательно в двойные ковычки
+$countParagraph = substr_count($text, "\n");
 echo '<h3>number of paragraphs = </h3>' .$countParagraph. '<br>';
 
 // количество предложений
