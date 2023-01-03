@@ -56,17 +56,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fileName = "";
         if (isset($_POST["load_file"])) {
             if ($_FILES['load_file']['error'] == 0 && $_FILES['load_file']['size'] > 0) {
-                    $fileName = $_FILES['load_file']['name'];
-                    $urlFiles = "images/$fileName";
-                    if (!move_uploaded_file($_FILES['load_file']['tmp_name'], $urlFiles)) {
-                       $error = false;
-                    }
+                $fileName = $_FILES['load_file']['name'];
+                $urlFiles = "images/$fileName";
+                if (!move_uploaded_file($_FILES['load_file']['tmp_name'], $urlFiles)) {
+                    $error = false;
                 }
             }
         }
-    } else {
-        include("index.php");
     }
+} else {
+    include("index.php");
+}
 if ($error == true) {
     $new_data = "INSERT INTO user_book (user, phone, mail, country, message_text, url) VALUES ('$name', '$phone', '$mail', '$country', '$message', '$urlFiles')";
     try {
