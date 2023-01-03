@@ -9,7 +9,7 @@
     <h2><b>Guestbook</b></h2>
     <fieldset>
         <legend>User_book</legend>
-        <input type="text" name="name" style="margin-bottom:10px;" placeholder="30 symbols" required pattern="[A-Za-z]+" value="">
+        <input type="text" name="name" style="margin-bottom:10px;" placeholder="Enter the name [A-Za-z] limit 30 symb" required pattern="[A-Za-z]+" value="">
         <label for="text">&nbsp;User_name</label><br>
 
         <input type="tel" name="tel" maxlength="12" style="margin-bottom:10px;" placeholder="375291234567"
