@@ -26,7 +26,6 @@
         <label for="text">&nbsp;Message</label><br>
 
         <input type="file" name="load_file"><br>
-        <input type="hidden" name="MAX_FILE_SIZE" value="65535">
 
         <button type="submit" name="button" id="button" style="margin-top:3px; margin-bottom:10px;">SEND</button><br>
         <input type="reset" value="Reset">

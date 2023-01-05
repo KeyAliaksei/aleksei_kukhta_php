@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $fileName = "";
-        if (isset($_POST["load_file"])) {
+        if (isset($_FILES["load_file"])) {
             if ($_FILES['load_file']['error'] == 0 && $_FILES['load_file']['size'] > 0) {
                 $fileName = $_FILES['load_file']['name'];
                 $urlFiles = "images/$fileName";
